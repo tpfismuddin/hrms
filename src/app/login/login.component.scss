@@ -1,0 +1,60 @@
+.example-container {
+  text-align: center;
+  background: #98bdc1 0% 0% no-repeat padding-box;
+  height: 340px;
+  width: 440px;
+  border-radius: 12px;
+  opacity: 1;
+  padding: 16px;
+}
+
+
+
+.login-bg {
+  // background: Url('assets/login/login-bg.png');
+  height: 100vh;
+  align-items: center;
+  text-align: -webkit-center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.login-wrapper {
+  background-color: #f1f1f7;
+  overflow: hidden;
+}
+
+.example-container>* {
+  width: 100%;
+}
+
+.m-top
+{
+margin-top: 36px;
+}
+
+.user-info {
+  max-width: 90%;
+  font-size: 20px;
+}
+
+.login-btn {
+  background-color: #004391 !important;
+  max-width: 90% !important;
+  height: 50px;
+  margin-top: 8% !important;
+}
+
+.login-foot {
+  text-align: center;
+  letter-spacing: 0;
+  color: #43425D;
+  opacity: 1;
+  font-size: 13px;
+  margin: 72px 0px;
+}
+
+.login-clk {
+  color: gray;
+}

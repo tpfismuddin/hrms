@@ -1,0 +1,120 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap');
+
+:host {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 8px 0;
+}
+
+p {
+  margin: 0;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.toolbar {
+  display: flex;
+  margin: -2px;
+  align-items: center;
+  color: white;
+  font-weight: 600;
+  height: 65px;
+  box-shadow: 0 14px 6px 0 rgba(0, 0, 0, 0.04);
+  background-color: #00327c;
+}
+
+.toolbar img {
+  margin: 0px 40px;
+}
+
+.mat-tab-header {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  left: -8px;
+}
+
+.div-area {
+  margin: 0px 0px 15px 0px;
+}
+
+.text-right {
+  text-align: right !important;
+  align-self: center;
+}
+
+.profile {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  float: right;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-right: 5px;
+}
+
+.pull-left {
+  float: left;
+}
+
+.name {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  color: #fff;
+}
+
+.design {
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #999;
+  text-transform: uppercase;
+}
+
+.image-block {
+  float: right;
+  height: 30px;
+  width: 30px;
+  margin-left: 10px !important;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+button {
+  outline: none;
+}
+
+

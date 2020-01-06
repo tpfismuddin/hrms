@@ -1,0 +1,20 @@
+<div class="login-wrapper" fxLayout="row">
+    <div fxFlex="100" class="login-bg">
+        <div fxFlex="100">
+            <div class="example-container">
+                <mat-form-field class="user-info m-top">
+                    <mat-label>Username</mat-label>
+                    <input matInput placeholder="Username" [(ngModel)]="username" name="username" required>
+                </mat-form-field>
+                <mat-form-field class="user-info">
+                    <mat-label>Password</mat-label>
+                    <input matInput placeholder="Password" [(ngModel)]="password" type="password" name="password"
+                        required>
+
+                </mat-form-field>
+                <button mat-raised-button color="primary" class="login-btn" (click)="login()">Login</button>
+            </div>
+        </div>
+
+    </div>
+</div>

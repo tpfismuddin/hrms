@@ -1,0 +1,37 @@
+.master-fixed-header {
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 2;
+  padding-top: 15px;
+}
+
+.task-div {
+  padding: 12px;
+}
+
+.dc-th {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.22;
+  color: #000;
+  margin-bottom: 5px !important;
+  padding: 10px !important;
+}
+
+.dc-row {
+  border-radius: 5px;
+  background-color: #dadfe7;
+  margin-bottom: 5px;
+  padding: 0 10px;
+  color: #000;
+  transition: 0.4s;
+  align-items: center;
+  cursor: default;
+  height: auto;
+  text-align: left;
+}
+
+.dc-card {
+  margin: 6px 2px;
+  font-size: 14px;
+}
