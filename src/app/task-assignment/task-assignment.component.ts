@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatDialog } from "@angular/material";
 import { AddAssetComponent } from './add-asset/add-asset.component'
-import { EditAssetComponent } from './edit-asset/edit-asset.component';
 import { AppUrlServiceService } from '../app-url-service.service';
 import { AppServiceService } from '../app-service.service';
 import * as _ from 'underscore';
@@ -19,6 +18,8 @@ export class TaskAssignmentComponent implements OnInit {
   ngOnInit() {
     this.getMaster();
   }
+
+
   getMaster() {
     this.services.getAll(this.appUrl.geturlfunction('GET_CAT_LIST')).subscribe(res => {
       this.masterData = res;
@@ -27,23 +28,20 @@ export class TaskAssignmentComponent implements OnInit {
 
 
   edit(datas: any) {
-    const modalRef = this.dialog.open(EditAssetComponent, {
+    console.log(datas)
+    const dialogRef = this.dialog.open(AddAssetComponent, {
       position: {
-        right: '15px',
       },
-      minHeight: '60vh',
-      width: '400px',
-      maxHeight: '100vh',
-      panelClass: 'editFlight',
+      width: '600px',
+      panelClass: 'modelOpen',
       data: {
         mode: 'EDIT',
-        bayDet: datas,
-        apiData: this.masterData
-      },
-
+        apiData: this.masterData,
+        data: datas,
+      }
     });
 
-    modalRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe(result => {
       if (result !== undefined) {
         this.getMaster();
       }
@@ -52,26 +50,23 @@ export class TaskAssignmentComponent implements OnInit {
 
 
   add() {
-    const modalRef = this.dialog.open(AddAssetComponent, {
+    const dialogRef = this.dialog.open(AddAssetComponent, {
       position: {
-        right: '15px',
+        right: '0'
       },
-      minHeight: '60vh',
-      width: '400px',
-      maxHeight: '100vh',
-      panelClass: 'addNewflight',
+      width: '600px',
+      panelClass: 'modelOpen',
       data: {
         mode: 'ADD',
-        apiData: this.masterData
-      },
-
+        data: this.masterData,
+      }
     });
 
-
-    modalRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe(result => {
       if (result !== undefined) {
         this.getMaster();
       }
     });
+
   }
 }

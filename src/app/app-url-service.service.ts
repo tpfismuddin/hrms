@@ -13,6 +13,7 @@ export class AppUrlServiceService {
     let obj: any =
     {
       GET_CAT_LIST: environment.baseUrl + 'getCar',
+      CREATE_USER:environment.baseUrl + 'postCar'
     }
     return obj[param];
   }

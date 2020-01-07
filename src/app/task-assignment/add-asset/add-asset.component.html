@@ -1,43 +1,52 @@
-<div fxLayout="row">
-        <div fxFlex="50">
-                <h2>Add asset to</h2>
+<div class="modal-div">
+    <div class="user-head">
+        Add User Details
+    </div>
+    <form class="example-form">
+        <div fxLayout="row wrap">
+            <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput name='firtname' [(ngModel)]="masterDetails.name">
+            </mat-form-field>
+            <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Title</mat-label>
+                <input matInput name="title" [(ngModel)]="masterDetails.title">
+            </mat-form-field>
+            <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Mobile</mat-label>
+                <input matInput name='mobile' [(ngModel)]="masterDetails.mobile">
+            </mat-form-field>
+            <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Date of Birth</mat-label>
+                <input matInput name="dob" [(ngModel)]="masterDetails.dob">
+            </mat-form-field>
+            <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Cureent Tech</mat-label>
+                <input matInput name='tech' [(ngModel)]="masterDetails.tech">
+            </mat-form-field>
+            <mat-form-field class="w-100" appearance="outline">
+                <mat-label>CTC</mat-label>
+                <input matInput name="ctc" [(ngModel)]="masterDetails.ctc">
+            </mat-form-field>
+            <mat-form-field class="w-100" appearance="outline">
+                <mat-label>ECTC</mat-label>
+                <input matInput name='ectc' [(ngModel)]="masterDetails.ectc">
+            </mat-form-field>
+            <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Notice period</mat-label>
+                <input matInput name="notice" [(ngModel)]="masterDetails.notice">
+            </mat-form-field>
+            <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Remarks</mat-label>
+                <input matInput name="remarks" [(ngModel)]="masterDetails.remarks">
+            </mat-form-field>
         </div>
-        <mat-select name="bayName" [(ngModel)]="bays" required #bayName="ngModel" (ngModelChange)="modList($event)"
-                fxFlex="50" class="select-mat-op">
-                <mat-option [value]="bayType.name" *ngFor="let bayType of bayTypes" class="mat-normal-option">
-                        {{bayType.name}}
-                </mat-option>
-        </mat-select>
-</div>
-<div *ngIf="noBag" fxLayout="row" class="truck">
-        <h4>BAGGAGE TRUCK</h4>
-</div>
-<div fxLayout="row" fxLayoutGap="20px">
-        <button [ngClass]="{'bag_equip': bagSel, 'bag_default': !bagSel}" *ngFor="let bag of baggage" fxFlex="20"
-                fxFlex="25" (click)="bagSelect(bag,bagCount);">{{bag}}</button>
-</div>
-<div *ngIf="noCat" fxLayout="row">
-        <h4>Catering</h4>
-</div>
-<div fxLayout="row" fxLayoutGap="20px">
-        <button [ngClass]="{'cat_equip': catSel, 'cat_default': !catSel}" *ngFor="let cater of catering" fxFlex="20"
-                fxFlex="25" (click)="catSelect(cater,catCount);">{{cater}}</button>
-</div>
-<div *ngIf="noLad" fxLayout="row">
-        <h4>Step Ladder</h4>
-</div>
-<div fxLayout="row" fxLayoutGap="20px">
-        <button [ngClass]="{'lad_equip': ladSel, 'lad_default': !ladSel}" *ngFor="let lad of ladder" fxFlex="25"
-                (click)="ladSelect(lad,ladCount);">{{lad}}</button>
-</div>
-<div *ngIf="noBus" fxLayout="row">
-        <h4>Bus</h4>
-</div>
-<div fxLayout="row" fxLayoutGap="20px">
-        <button [ngClass]="{'bus_equip': busSel, 'bus_default': !busSel}" *ngFor="let bus of buses" fxFlex="25"
-                (click)="busSelect(bus,busCount);">{{bus}}</button>
-</div>
-<div fxLayout="row" class="act-btn" fxLayoutAlign="center" fxLayoutGap="40px">
-        <button fxFlex="30" class="cancel-btn" mat-raised-button (click)="cancel()">CANCEL</button>
-        <button fxFlex="30" class="add-btn" mat-raised-button color="warn" (click)="add()">ADD</button>
+        <mat-dialog-actions>
+            <button *ngIf="details.mode == 'ADD'" mat-raised-button color="primary"
+                (click)="add(masterDetails)">DONE</button>
+                <button *ngIf="details.mode == 'EDIT'" mat-raised-button color="primary"
+                (click)="add(masterDetails)">DONE</button>
+            <button mat-raised-button color="primary" (click)="close()">CANCEL</button>
+        </mat-dialog-actions>
+    </form>
 </div>
