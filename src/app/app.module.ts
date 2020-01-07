@@ -20,7 +20,6 @@ import { LayoutComponent } from './layout/layout.component';
 import { AgmCoreModule } from '@agm/core';
 import { RouterModule } from '@angular/router';
 import { AddAssetComponent } from './task-assignment/add-asset/add-asset.component';
-import { EditAssetComponent } from './task-assignment/edit-asset/edit-asset.component';
 import * as _ from 'underscore';
 import { HttpClientModule } from '@angular/common/http'; 
 @NgModule({
@@ -32,11 +31,9 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     LayoutComponent,
     AddAssetComponent,
-    EditAssetComponent,
   ], 
   entryComponents: [
-    AddAssetComponent,
-    EditAssetComponent
+    AddAssetComponent
   ],
   imports: [
     BrowserModule,
