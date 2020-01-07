@@ -76,6 +76,14 @@
             }
           }
         },
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/project-name",
+            "netlifyToken": "44a1edd6fd1fe7c0c892f48c57294b1b597ab00cb813c98583d40e3ad410752b",
+            "siteId": "ee4025cb-b0f0-4435-8ebd-831ec13e941b"
+          }
+        },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
