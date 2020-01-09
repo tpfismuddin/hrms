@@ -1,6 +1,6 @@
 <div class="task-div">
-        <div fxLayout="row" fxLayoutWrap="wrap">
-                <div fxFlex="100" class="master-fixed-header">
+        <div fxLayout="row" class="master-fixed-header" fxLayoutWrap="wrap">
+                <div fxFlex="100">
                         <div fxLayout="row" class="dc-th">
                                 <div fxFlex="10">NAME</div>
                                 <div fxFlex="10">TITLE</div>
@@ -34,7 +34,7 @@
                                                         class="cust-action-btn dc-tab-btn">
                                                         <mat-icon>more_horiz</mat-icon>
                                                 </button>
-                                                <mat-menu #actionMenu="matMenu" class="cust-mat-menu">
+                                                <mat-menu #actionMenu="matMenu" yPosition="below" class="cust-mat-menu">
                                                         <button mat-menu-item (click)="edit(value)">EDIT</button>
                                                         <button mat-menu-item
                                                                 (click)="delete(value._id)">REMOVE</button>
@@ -47,4 +47,3 @@
         <button mat-raised-button color="primary" class="add-btn" (click)="add()">
                 <mat-icon>add</mat-icon>
         </button>
-</div>

@@ -2,6 +2,11 @@
   width: 100%;
 }
 
+.alert-danger {
+  color: red;
+  font-size: 14px;
+  margin: -14px 0 16px !important;
+}
 
 .w-100 {
   width: 90% !important;
@@ -16,6 +21,24 @@
 }
 
 .modal-div {
-  max-height: 610px;
-  overflow: scroll;
+  max-height: 92vh;
+  overflow-y: auto;
 }
+
+
+
+.modal-div::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #ffff;
+}
+
+.modal-div::-webkit-scrollbar {
+  width: 3px;
+  background-color: #ffff;
+}
+
+.modal-div::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #191c29;
+}
+

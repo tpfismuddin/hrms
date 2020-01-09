@@ -52,9 +52,9 @@ export class TaskAssignmentComponent implements OnInit {
   add() {
     const dialogRef = this.dialog.open(AddAssetComponent, {
       position: {
-        right: '0'
+        right: '3px'
       },
-      width: '600px',
+      width: '500px',
       panelClass: 'modelOpen',
       data: {
         mode: 'ADD',
