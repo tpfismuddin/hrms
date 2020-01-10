@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl:"https://smarttrackbackend.herokuapp.com/",
+  baseUrl:"http://nodehrms.herokuapp.com/products/"
 };
