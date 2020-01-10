@@ -6,7 +6,7 @@
         <div fxLayout="row wrap">
             <mat-form-field class="w-100" appearance="outline">
                 <mat-label>Name</mat-label>
-                <input matInput name='firstname' required minlength="8" #firstname="ngModel"
+                <input matInput name='firstname' required minlength="4" #firstname="ngModel"
                     [(ngModel)]="masterDetails.name">
             </mat-form-field>
             <div *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)" class="alert-danger">

@@ -37,6 +37,7 @@ p {
   margin: -2px;
   align-items: center;
   color: white;
+  position: sticky;
   font-weight: 600;
   height: 65px;
   box-shadow: 0 14px 6px 0 rgba(0, 0, 0, 0.04);
@@ -106,6 +107,7 @@ p {
 html,
 body {
   height: 100%;
+  overflow: hidden !important;
 }
 
 body {
@@ -119,4 +121,31 @@ button {
 
 .w-100 {
   width: 100%;
+}
+
+.main-div {
+  height: 90vh;
+  overflow-y: scroll;
+}
+
+.main-div::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #ffff;
+}
+
+.main-div::-webkit-scrollbar {
+  width: 3px;
+  background-color: #ffff;
+}
+
+.main-div::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #191c29;
+}
+
+.mat-dialog-container {
+  width: 98% !important;
+  height: 98vh !important;
+  overflow: hidden !important;
+  padding: 12px 8px 12px 18px !important;
 }
