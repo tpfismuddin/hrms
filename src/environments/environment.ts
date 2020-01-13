@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl:"http://nodehrms.herokuapp.com/products/"
+  baseUrl:"https://nodehrms.herokuapp.com/products/"
 };
 
 /*
