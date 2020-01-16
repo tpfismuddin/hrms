@@ -12,21 +12,21 @@ export class LayoutComponent implements OnInit {
   activeLinkIndex: any;
 
   constructor(private router: Router) {
-    this.router.navigate(['/layout/dashboard']);
+    this.router.navigate(['/layout/task-assignment']);
     this.navLinks = [
-      {
-        label: 'Dashboard',
-        link: 'dashboard',
+       {
+        label: 'CAR',
+        link: 'task-assignment',
         index: 0
       }, {
-        label: 'Assets',
-        link: 'task-assignment',
+        label: 'Master',
+        link: 'dashboard',
         index: 1
-      }, {
+      },{
         label: 'Insights',
         link: 'insights',
         index: 2
-      },
+      }
     ];
 
 

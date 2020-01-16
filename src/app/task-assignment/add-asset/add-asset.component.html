@@ -50,13 +50,38 @@
             </div>
             <mat-form-field class="w-100" appearance="outline">
                 <mat-label>Current Technology</mat-label>
-                <input matInput name='tech' required #tech="ngModel"  [(ngModel)]="masterDetails.tech">
+                <input matInput name='tech' required #tech="ngModel" [(ngModel)]="masterDetails.curr_tech">
             </mat-form-field>
             <div *ngIf="tech.invalid && (tech.dirty || tech.touched)" class="alert-danger">
                 <div *ngIf="tech.errors.required">
-                   Current Technology is required.
+                    Current Technology is required.
                 </div>
             </div>
+
+            <!-- New section start -->
+            <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Account</mat-label>
+                <mat-select name="account" required [(ngModel)]="masterDetails.account" #account="ngModel">
+                    <mat-option [value]="1" class="mat-normal-option">Digital</mat-option>
+                    <mat-option [value]="2" class="mat-normal-option">Products</mat-option>
+                    <mat-option [value]="3" class="mat-normal-option">Services</mat-option>
+                    <mat-option [value]="4" class="mat-normal-option">Support</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Req</mat-label>
+                <mat-select name="req" required [(ngModel)]="masterDetails.req" #account="ngModel">
+                    <mat-option [value]="1" class="mat-normal-option">Full Stack</mat-option>
+                    <mat-option [value]="2" class="mat-normal-option">RAVE</mat-option>
+                    <mat-option [value]="3" class="mat-normal-option">iOS</mat-option>
+                    <mat-option [value]="4" class="mat-normal-option">C++</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="w-100" appearance="outline">
+                <mat-label>EXPERIENCE</mat-label>
+                <input matInput type='number' name="exp" required #exp="ngModel" [(ngModel)]="masterDetails.exp">
+            </mat-form-field>
+            <!-- New section end -->
             <mat-form-field class="w-100" appearance="outline">
                 <mat-label>CTC</mat-label>
                 <input matInput type='number' name="ctc" required #ctc="ngModel" [(ngModel)]="masterDetails.ctc">
@@ -77,7 +102,8 @@
             </div>
             <mat-form-field class="w-100" appearance="outline">
                 <mat-label>Notice period</mat-label>
-                <input matInput name="notice" type='number' required minlength="2" #notice="ngModel" [(ngModel)]="masterDetails.notice">
+                <input matInput name="notice" type='number' required minlength="2" #notice="ngModel"
+                    [(ngModel)]="masterDetails.notice">
             </mat-form-field>
             <div *ngIf="notice.invalid && (notice.dirty || notice.touched)" class="alert-danger">
                 <div *ngIf="notice.errors.required">
@@ -86,7 +112,7 @@
             </div>
             <mat-form-field class="w-100" appearance="outline">
                 <mat-label>Remarks</mat-label>
-                <input matInput name="remarks" required #remarks="ngModel"  [(ngModel)]="masterDetails.remarks">
+                <input matInput name="remarks" required #remarks="ngModel" [(ngModel)]="masterDetails.remarks">
             </mat-form-field>
             <div *ngIf="remarks.invalid && (remarks.dirty || remarks.touched)" class="alert-danger">
                 <div *ngIf="remarks.errors.required">
@@ -96,9 +122,9 @@
         </div>
         <mat-dialog-actions>
             <button *ngIf="details.mode == 'ADD'" mat-raised-button color="primary"
-                (click)="add(masterDetails)">DONE</button>
+                (click)="add(masterDetails)">ADD</button>
             <button *ngIf="details.mode == 'EDIT'" mat-raised-button color="primary"
-                (click)="add(masterDetails)">DONE</button>
+                (click)="edit(masterDetails)">UPDATE</button>
             <button mat-raised-button color="primary" (click)="close()">CANCEL</button>
         </mat-dialog-actions>
     </form>

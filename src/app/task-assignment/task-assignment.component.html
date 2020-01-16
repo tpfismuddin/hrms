@@ -3,14 +3,17 @@
                 <div fxFlex="100">
                         <div fxLayout="row" class="dc-th">
                                 <div fxFlex="10">NAME</div>
-                                <div fxFlex="10">TITLE</div>
+                                <div fxFlex="16">TITLE</div>
                                 <div fxFlex="10">MOBILE</div>
-                                <div fxFlex="10">DOB</div>
+                                <!-- <div fxFlex="10">DOB</div> -->
+                                <div fxFlex="10">ACCOUNT</div>
+                                <div fxFlex="5">EXP</div>
                                 <div fxFlex="10">CURR TECH</div>
-                                <div fxFlex="10">CTC</div>
-                                <div fxFlex="10">ECTC</div>
-                                <div fxFlex="10">NOTICE</div>
-                                <div fxFlex="15">REMARKS</div>
+                                <div fxFlex="5">REQ</div>
+                                <div fxFlex="7">CTC</div>
+                                <div fxFlex="7">ECTC</div>
+                                <div fxFlex="5">NOTICE</div>
+                                <div fxFlex="10">REMARKS</div>
                                 <div fxFlex="5" class="text-right">ACTION</div>
                         </div>
                 </div>
@@ -21,14 +24,20 @@
                         <div class="dc-card" *ngFor="let value of masterData">
                                 <div fxLayout="row" fxLayoutWrap="wrap" class="dc-row">
                                         <div fxFlex="10">{{value.name}}</div>
-                                        <div fxFlex="10">{{value.title}}</div>
+                                        <div fxFlex="16">{{value.title}}</div>
                                         <div fxFlex="10">{{value.mobile}}</div>
-                                        <div fxFlex="10">{{value.dob}}</div>
+                                        <!-- <div fxFlex="10">{{value.dob}}</div> -->
+                                        <div fxFlex="10">{{value.account == 1 ? 'Digital': value.account == 2 ? 'Products' :
+                                                value.account == 3 ? 'Services' : value.account == 4 ? 'Support' : ''}}
+                                        </div>
+                                        <div fxFlex="5">{{value.exp}}</div>
                                         <div fxFlex="10">{{value.curr_tech}}</div>
-                                        <div fxFlex="10">{{value.ctc}}</div>
-                                        <div fxFlex="10">{{value.ectc}}</div>
-                                        <div fxFlex="10">{{value.notice}}</div>
-                                        <div fxFlex="15">{{value.remarks}}</div>
+                                        <div fxFlex="5">{{value.req == 1 ? 'Full Stack' : value.req == 2 ? 'RAVE' :
+                                                value.req == 3 ? 'iOS' : value.req == 1 ? 'C++' : ''}}</div>
+                                        <div fxFlex="7">{{value.ctc}}</div>
+                                        <div fxFlex="7">{{value.ectc}}</div>
+                                        <div fxFlex="5">{{value.notice}}</div>
+                                        <div fxFlex="10">{{value.remarks}}</div>
                                         <div fxFlex="5" class="text-right">
                                                 <button mat-icon-button [mat-menu-trigger-for]="actionMenu"
                                                         class="cust-action-btn dc-tab-btn">
@@ -36,7 +45,7 @@
                                                 </button>
                                                 <mat-menu #actionMenu="matMenu" yPosition="below" class="cust-mat-menu">
                                                         <button mat-menu-item (click)="edit(value)">EDIT</button>
-                                                        <button mat-menu-item>REMOVE</button>
+                                                        <!-- <button mat-menu-item>REMOVE</button> -->
                                                 </mat-menu>
                                         </div>
                                 </div>

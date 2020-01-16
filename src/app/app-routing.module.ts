@@ -24,8 +24,8 @@ const routes: Routes = [
     path: 'layout',
     component: LayoutComponent,
     children: [
-      { path: 'dashboard', component: DashboardComponent },
       { path: 'task-assignment', component: TaskAssignmentComponent },
+      { path: 'dashboard', component: DashboardComponent },
       { path: 'insights', component: InsightsComponent }
     ]
   }

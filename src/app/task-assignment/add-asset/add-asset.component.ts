@@ -12,9 +12,11 @@ import * as _ from 'underscore';
 export class AddAssetComponent implements OnInit {
   masterDetails: any = {};
   data: any;
+  account: any[];
+  // account: any[] = [{'name': 'Digital'},{'name': 'Products'}, {'name': 'Services'},{'name': 'Support'}];
 
   constructor(private dialogRef: MatDialogRef<AddAssetComponent>, @Inject(MAT_DIALOG_DATA) public details: any, private appUrl: AppUrlServiceService, private services: AppServiceService) {
-    console.log(this.details)
+    console.log(this.details);
   }
 
   ngOnInit() {
@@ -29,7 +31,18 @@ export class AddAssetComponent implements OnInit {
 
   add(datas) {
     this.data = datas;
+    console.log(this.data);
     this.services.create(this.appUrl.geturlfunction('CREATE_USER'), this.data).subscribe(res => {
+      if (res.status == true) {
+        this.dialogRef.close('RELOAD');
+      }
+    })
+  }
+
+  edit(data: any){
+    this.data = data;
+    console.log(this.data);
+    this.services.create(this.appUrl.geturlfunction('UPDATE_USER'), this.data).subscribe(res => {
       if (res.status == true) {
         this.dialogRef.close('RELOAD');
       }
