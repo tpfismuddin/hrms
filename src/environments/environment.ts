@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   baseUrl:"https://nodehrms.herokuapp.com/products/"
+  // baseUrl:"https://localhost:1234/products/"
 };
 
 /*

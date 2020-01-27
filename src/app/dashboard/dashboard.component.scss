@@ -6,6 +6,11 @@
 agm-map {
   height: 100%;
 }
+.add-btn {
+  bottom: 2% !important;
+  right: .4% !important;
+  position: fixed !important;
+}
 
 .equip-details {
   width: 440px;
@@ -141,4 +146,46 @@ agm-map {
   border-top-width: 1px;
   border-top-style: solid;
   position: relative!important;
+}
+
+
+// New styling
+.container{
+  padding: 20px;
+}
+
+.job-listing-title{
+  background: #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid gray;
+  font-size: 16px;
+  font-weight: bold;
+}
+.job-listing-body{
+  background: #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    margin: 10px 0px;
+}
+
+.job-closed {
+  font-weight: bold;
+  color: #e81426 !important;
+}
+.job-active {
+  font-weight: bold;
+  color: #5cbb1d;
+}
+
+.job-hold {
+  font-weight: bold;
+  color: #e9ab15;
+}
+
+.description-container{
+  padding: 10px 30px;
 }

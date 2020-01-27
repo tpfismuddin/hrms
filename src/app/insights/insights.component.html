@@ -1,3 +1,78 @@
-<div>
-    insights works
+<div class="container">
+    <!-- Accounts section start -->
+    <div class="master-sec" fxLayout="row wrap">
+        <h1 class="label">Accounts: </h1>
+        <div fxFlex="35">
+            <form class="example-form">
+                <mat-form-field class="w-50" appearance="outline">
+                    <mat-label>Account</mat-label>
+                    <input matInput name="new-account" #account="ngModel" [(ngModel)]="newAcc">
+                </mat-form-field>
+                <mat-form-field class="w-50" appearance="outline">
+                    <mat-label>Manager</mat-label>
+                    <input matInput name="new-manager" #manager="ngModel" [(ngModel)]="newManager">
+                </mat-form-field>
+            </form>
+        </div>
+        <div fxFlex="5">
+            <button mat-raised-button class="insert-btn" color="primary"
+                (click)="addAcc(newAcc,newManager)">ADD</button>
+        </div>
+        <div fxFlex="100">
+            <div fxLayout="row wrap">
+                <div fxFLex *ngFor="let a of acc" class="account-class">
+                    {{a.name}}: {{a.manager}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Accounts section end -->
+    <hr>
+    <!-- Designation section start -->
+    <div class="master-sec" fxLayout="row wrap">
+        <h1 class="label">Designations: </h1>
+        <div fxFlex="17">
+            <form class="example-form">
+                <mat-form-field class="w-50" appearance="outline">
+                    <mat-label>Designation</mat-label>
+                    <input matInput name="new-designation" #desg="ngModel" [(ngModel)]="newDes">
+                </mat-form-field>
+            </form>
+        </div>
+        <div fxFlex="5">
+            <button mat-raised-button class="insert-btn" color="primary" (click)="addDes(newDes)">ADD</button>
+        </div>
+        <div fxFlex="100">
+            <div fxLayout="row wrap">
+                <div fxFLex *ngFor="let d of des" class="account-class">
+                    {{d.designation}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Designation section end -->
+    <hr>
+    <!-- Location section start -->
+    <div class="master-sec" fxLayout="row wrap">
+        <h1 class="label">Location: </h1>
+        <div fxFlex="17">
+            <form class="example-form">
+                <mat-form-field class="w-50" appearance="outline">
+                    <mat-label>Location</mat-label>
+                    <input matInput name="new-location" #loca="ngModel" [(ngModel)]="newLoc">
+                </mat-form-field>
+            </form>
+        </div>
+        <div fxFlex="5">
+            <button mat-raised-button class="insert-btn" color="primary" (click)="addLoc(newLoc)">ADD</button>
+        </div>
+        <div fxFlex="100">
+            <div fxLayout="row wrap">
+                <div fxFLex *ngFor="let l of loc" class="account-class">
+                    {{l.location}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Location section end -->
 </div>

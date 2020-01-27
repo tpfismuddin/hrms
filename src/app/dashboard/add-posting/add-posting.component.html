@@ -1,0 +1,89 @@
+<div class="container">
+    <form class="example-form">
+        <div fxLayout="row wrap">
+            <!-- Accounts section start -->
+            <div fxFlex="20">
+                <mat-form-field class="w-100" appearance="outline">
+                    <mat-label>Account</mat-label>
+                    <mat-select name="acc" [(ngModel)]="req.account" #acc="ngModel">
+                        <mat-option *ngFor="let a of accList" [value]="a.uId" class="mat-normal-option">{{a.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <!-- Accounts section end -->
+            <div fxFlex="5"></div>
+            <!-- Designation section start -->
+            <div fxFlex="20">
+                <mat-form-field class="w-100" appearance="outline">
+                    <mat-label>Designation</mat-label>
+                    <mat-select name="des" [(ngModel)]="req.designation" #acc="ngModel">
+                        <mat-option *ngFor="let d of desList" [value]="d.dId" class="mat-normal-option">
+                            {{d.designation}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <!-- Designation section end -->
+            <div fxFlex="5"></div>
+            <!-- Job status section start -->
+            <div fxFlex="25">
+                <mat-radio-group name="status" aria-labelledby="example-radio-group-label" class="example-radio-group"
+                    [(ngModel)]="req.status">
+                    <mat-radio-button class="example-radio-button" *ngFor="let j of jobStatus" [value]="j">
+                        {{j}}
+                    </mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <!-- Job status section end -->
+            <div fxFlex="5"></div>
+            <!-- openings section start -->
+            <div fxFlex="10">
+                <mat-form-field class="w-100" appearance="outline">
+                    <mat-label>Openings</mat-label>
+                    <input matInput type='number' name="new-open" #open="ngModel" [(ngModel)]="req.open">
+                </mat-form-field>
+            </div>
+            <!-- openings section start -->
+            <!-- Members section start -->
+            <div fxFlex="100">
+                <div fxLayout="row wrap">
+                    <div fxFlex="20">
+                        <mat-form-field class="w-100" appearance="outline">
+                            <mat-label>Members</mat-label>
+                            <input matInput name="new-member" #mem="ngModel" [(ngModel)]="panelMem">
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="5"><button mat-raised-button class="panel-insert-btn" color="primary"
+                            (click)="addMem(panelMem)">ADD</button>
+                    </div>
+                    <div fxFlex="5"></div>
+                    <div fxFlex="70" class="panel-sec">
+                        <div fxLayout="row wrap">
+                            <div fxFLex class="panel-members" *ngFor="let p of panels">
+                                {{p}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Members section start -->
+            <!-- Job description section start -->
+            <div fxFlex="100">
+                <!-- <ck-editor name="editor1" [(ngModel)]="req.jobDes" skin="moono-lisa" language="en" [fullPage]="true">
+                </ck-editor> -->
+                <mat-form-field class="w-100" appearance="outline">
+                    <mat-label>Job Description</mat-label>
+                    <textarea name="new-job" [(ngModel)]="req.jobDes" matInput cdkTextareaAutosize
+                        #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="5" cdkAutosizeMaxRows="10"></textarea>
+                </mat-form-field>
+            </div>
+            <!-- Job description section start -->
+            <!-- Final submit button start -->
+            <div fxFlex="100"><button mat-raised-button class="panel-insert-btn" color="primary"
+                    (click)="submit(req)">ADD</button>
+            </div>
+            <!-- Final submit button end -->
+        </div>
+    </form>
+</div>

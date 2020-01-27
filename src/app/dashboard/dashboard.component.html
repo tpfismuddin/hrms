@@ -1,3 +1,36 @@
-<div>
-    Dashboard works...
+<div class="container">
+    <div fxLayout="row wrap">
+        <!-- Left side listing -->
+        <div fxFlex="40">
+            <!-- Static header -->
+            <div fxLayout="row wrap" class="job-listing-title">
+                <div fxFlex="25">Account</div>
+                <div fxFlex="25">Designation</div>
+                <div fxFlex="25">Openings</div>
+                <div fxFlex="25">Status</div>
+            </div>
+            <!-- Dynamic body content -->
+            <div fxLayout="row wrap" *ngFor="let j of job" class="job-listing-body" (click)="selected(j)">
+                <div fxFlex="25">{{j.account}}</div>
+                <div fxFlex="25">{{j.designation}}</div>
+                <div fxFlex="25">{{j.open}}</div>
+                <div fxFlex="25" [ngClass]="{'job-active': j.status == 'Active', 'job-hold': j.status == 'Hold', 'job-closed': j.status == 'Closed'}">{{j.status}}</div>
+            </div>
+        </div>
+        <!-- Right side in detail -->
+        <div fxFlex="60" >
+            <div fxLayout="row wrap" class="description-container">
+                <div fxFlex="50">Account: {{selJob.account}}</div>
+                <div fxFlex="50">Openings: {{selJob.open}}</div>
+                <div fxFlex="50">Designation: {{selJob.designation}}</div>
+                <div fxFlex="50">Status: {{selJob.status}}</div>
+                <div fxFlex="100">Panel Members: 
+                    <div *ngFor="let panel of selJob.panel">{{panel}}</div></div>
+                <div fxFlex="100">{{selJob.jobDes}}</div>
+            </div>
+        </div>
+    </div>
+    <button mat-raised-button color="primary" class="add-btn" (click)="add()">
+        <mat-icon>add</mat-icon>
+    </button>
 </div>

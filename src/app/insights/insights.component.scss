@@ -1,0 +1,32 @@
+.account-class{
+    padding: 10px 15px;
+    background: lightgray;
+    border-radius: 15px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+::ng-deep .mat-form-field-flex > .mat-form-field-infix { padding: 0.4em 0px !important;}
+::ng-deep .mat-form-field-label-wrapper { top: -1.5em; }
+
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    transform: translateY(-1.1em) scale(.75);
+    width: 133.33333%;
+}
+::ng-deep .mat-form-field{
+    margin-left: 15px;
+}
+
+.insert-btn{
+    margin: 5px 10px;
+    border-radius: 20px;
+}
+.container{
+    padding: 20px;
+}
+.label{
+    margin-right: 10px;
+}
+.master-sec{
+    padding: 20px 5px;
+}

@@ -21,7 +21,11 @@ import { AgmCoreModule } from '@agm/core';
 import { RouterModule } from '@angular/router';
 import { AddAssetComponent } from './task-assignment/add-asset/add-asset.component';
 import * as _ from 'underscore';
-import { HttpClientModule } from '@angular/common/http'; 
+import { HttpClientModule } from '@angular/common/http';
+import { AddPostingComponent } from './dashboard/add-posting/add-posting.component'; 
+import { CKEditorModule } from 'ngx-ckeditor';
+import {MatRadioModule} from '@angular/material/radio';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,9 +35,11 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     LayoutComponent,
     AddAssetComponent,
+    AddPostingComponent,
   ], 
   entryComponents: [
-    AddAssetComponent
+    AddAssetComponent,
+    AddPostingComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +55,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     DemoMaterialModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    CKEditorModule,
+    MatRadioModule
   ],
   providers: [AppServiceService,AppServiceService],
   bootstrap: [AppComponent],

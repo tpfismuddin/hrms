@@ -12,17 +12,24 @@ import * as _ from 'underscore';
 })
 export class TaskAssignmentComponent implements OnInit {
   masterData: any = [];
+  acc: any = [];
 
   constructor(private dialog: MatDialog, private appUrl: AppUrlServiceService, private services: AppServiceService) { }
 
   ngOnInit() {
     this.getMaster();
+    this.getAccounts();
   }
 
 
   getMaster() {
     this.services.getAll(this.appUrl.geturlfunction('GET_CAT_LIST')).subscribe(res => {
       this.masterData = res;
+    })
+  }
+  getAccounts() {
+    this.services.getAll(this.appUrl.geturlfunction('GET_ACC')).subscribe(res => {
+      this.acc = res;
     })
   }
 

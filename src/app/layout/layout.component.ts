@@ -12,7 +12,7 @@ export class LayoutComponent implements OnInit {
   activeLinkIndex: any;
 
   constructor(private router: Router) {
-    this.router.navigate(['/layout/task-assignment']);
+    this.router.navigate(['/layout/dashboard']);
     this.navLinks = [
        {
         label: 'CAR',
