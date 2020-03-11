@@ -1,23 +1,25 @@
 .example-container {
   text-align: center;
-  background: #98bdc1 0% 0% no-repeat padding-box;
-  height: 340px;
+  background: #fff 0% 0% no-repeat padding-box;
+  height: 320px;
   width: 440px;
   border-radius: 12px;
   opacity: 1;
   padding: 16px;
+  margin-top: 15px;
 }
 
 
 
 .login-bg {
-  // background: Url('assets/login/login-bg.png');
+  background: Url('assets/login/hrms.jpg');
   height: 100vh;
   align-items: center;
-  text-align: -webkit-center;
+  // text-align: -webkit-center;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  padding-left: 10%;
 }
 
 .login-wrapper {
@@ -57,4 +59,9 @@ margin-top: 36px;
 
 .login-clk {
   color: gray;
+}
+
+.tsi-logo{
+  width: 440px;
+  text-align: center;
 }

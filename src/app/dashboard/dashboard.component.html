@@ -11,17 +11,18 @@
             </div>
             <!-- Dynamic body content -->
             <div fxLayout="row wrap" *ngFor="let j of job" class="job-listing-body" (click)="selected(j)">
-                <div fxFlex="25">{{j.account}}</div>
+                <!-- <div fxFlex="25">{{j.account}}</div> -->
                 <div fxFlex="25">{{j.designation}}</div>
                 <div fxFlex="25">{{j.open}}</div>
                 <div fxFlex="25" [ngClass]="{'job-active': j.status == 'Active', 'job-hold': j.status == 'Hold', 'job-closed': j.status == 'Closed'}">{{j.status}}</div>
             </div>
         </div>
         <!-- Right side in detail -->
-        <div fxFlex="60" >
+        <div fxFlex="60" *ngIf="selJob">
             <div fxLayout="row wrap" class="description-container">
-                <div fxFlex="50">Account: {{selJob.account}}</div>
+                <!-- <div fxFlex="50">Account: {{selJob.account}}</div> -->
                 <div fxFlex="50">Openings: {{selJob.open}}</div>
+                <div fxFlex="100">Title: {{selJob.title}}</div>
                 <div fxFlex="50">Designation: {{selJob.designation}}</div>
                 <div fxFlex="50">Status: {{selJob.status}}</div>
                 <div fxFlex="100">Panel Members: 

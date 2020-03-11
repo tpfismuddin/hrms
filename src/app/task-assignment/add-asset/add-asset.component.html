@@ -25,7 +25,11 @@
                 <div *ngIf="title.errors.required">
                     Title is required.
                 </div>
-            </div>
+            </div>            
+            <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Location</mat-label>
+                <input matInput name="loc" required #loc="ngModel" [(ngModel)]="masterDetails.location">
+            </mat-form-field>
             <mat-form-field class="w-100" appearance="outline">
                 <mat-label>Mobile</mat-label>
                 <input matInput name='mobile' required #mobile="ngModel" minlength="10" maxlength="10"
@@ -39,7 +43,7 @@
                     Mobile number must be at least 10 characters long.
                 </div>
             </div>
-            <mat-form-field class="w-100" appearance="outline">
+            <!-- <mat-form-field class="w-100" appearance="outline">
                 <mat-label>Date of Birth</mat-label>
                 <input matInput name="dob" type="date" required #dob="ngModel" [(ngModel)]="masterDetails.dob">
             </mat-form-field>
@@ -47,7 +51,7 @@
                 <div *ngIf="dob.errors.required">
                     Date of Birth is required.
                 </div>
-            </div>
+            </div> -->
             <mat-form-field class="w-100" appearance="outline">
                 <mat-label>Current Technology</mat-label>
                 <input matInput name='tech' required #tech="ngModel" [(ngModel)]="masterDetails.curr_tech">
@@ -111,12 +115,37 @@
                 </div>
             </div>
             <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Education</mat-label>
+                <input matInput name="education" required #edu="ngModel" [(ngModel)]="masterDetails.edu">
+            </mat-form-field>            
+            <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Curr Company</mat-label>
+                <input matInput name="curr" required #curr="ngModel" [(ngModel)]="masterDetails.currComp">
+            </mat-form-field>
+            <mat-form-field class="w-100" appearance="outline">
                 <mat-label>Remarks</mat-label>
                 <input matInput name="remarks" required #remarks="ngModel" [(ngModel)]="masterDetails.remarks">
             </mat-form-field>
             <div *ngIf="remarks.invalid && (remarks.dirty || remarks.touched)" class="alert-danger">
                 <div *ngIf="remarks.errors.required">
                     Remarks is required.
+                </div>
+            </div>
+            <div *ngIf="details.mode == 'EDIT'">
+                <mat-radio-group name="status" aria-labelledby="example-radio-group-label" class="example-radio-group"
+                    [(ngModel)]="masterDetails.status" (ngModelChange)="stateChange(masterDetails.status)">
+                    <mat-radio-button class="example-radio-button" *ngFor="let j of jobStatus" [value]="j">
+                        {{j}}
+                    </mat-radio-button>
+                </mat-radio-group>
+                <!-- job openings -->
+                <div class="" *ngIf="showJobs">
+                    <mat-radio-group name="jobMap" aria-labelledby="example-radio-group-label"
+                        class="example-radio-group" [(ngModel)]="masterDetails.jobMap">
+                        <mat-radio-button class="example-radio-button" *ngFor="let j of jobs" [value]="j.jId">
+                            {{j.title}}
+                        </mat-radio-button>
+                    </mat-radio-group>
                 </div>
             </div>
         </div>

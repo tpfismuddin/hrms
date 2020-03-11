@@ -13,12 +13,14 @@ import * as _ from 'underscore';
 export class TaskAssignmentComponent implements OnInit {
   masterData: any = [];
   acc: any = [];
+  job: any = [];
 
   constructor(private dialog: MatDialog, private appUrl: AppUrlServiceService, private services: AppServiceService) { }
 
   ngOnInit() {
     this.getMaster();
     this.getAccounts();
+    this.getJobs();
   }
 
 
@@ -30,6 +32,11 @@ export class TaskAssignmentComponent implements OnInit {
   getAccounts() {
     this.services.getAll(this.appUrl.geturlfunction('GET_ACC')).subscribe(res => {
       this.acc = res;
+    })
+  }
+  getJobs() {
+    this.services.getAll(this.appUrl.geturlfunction('GET_JOB')).subscribe(res => {
+      this.job = res;      
     })
   }
 
@@ -45,6 +52,7 @@ export class TaskAssignmentComponent implements OnInit {
         mode: 'EDIT',
         apiData: this.masterData,
         data: datas,
+        jobs: this.job
       }
     });
 

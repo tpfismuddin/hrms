@@ -5,7 +5,7 @@
             <div fxFlex="20">
                 <mat-form-field class="w-100" appearance="outline">
                     <mat-label>Account</mat-label>
-                    <mat-select name="acc" [(ngModel)]="req.account" #acc="ngModel">
+                    <mat-select name="acc" [(ngModel)]="req.account_id" #acc="ngModel">
                         <mat-option *ngFor="let a of accList" [value]="a.uId" class="mat-normal-option">{{a.name}}
                         </mat-option>
                     </mat-select>
@@ -46,7 +46,7 @@
             </div>
             <!-- openings section start -->
             <!-- Members section start -->
-            <div fxFlex="100">
+            <div fxFlex="75">
                 <div fxLayout="row wrap">
                     <div fxFlex="20">
                         <mat-form-field class="w-100" appearance="outline">
@@ -68,6 +68,12 @@
                 </div>
             </div>
             <!-- Members section start -->
+            <div fxFlex="25">
+                <mat-form-field class="w-100" appearance="outline">
+                    <mat-label>Job Title</mat-label>
+                    <input matInput name="new-title" #title="ngModel" [(ngModel)]="req.title">
+                </mat-form-field>
+            </div>
             <!-- Job description section start -->
             <div fxFlex="100">
                 <!-- <ck-editor name="editor1" [(ngModel)]="req.jobDes" skin="moono-lisa" language="en" [fullPage]="true">

@@ -32,7 +32,7 @@ export class AddPostingComponent implements OnInit {
     console.log(this.panels);
   }
   submit(data:any){    
-    data.jobId = momentzone().tz('Asia/Kolkata').unix() * 1000,
+    data.jId = momentzone().tz('Asia/Kolkata').unix() * 1000,
     data.panel = this.panels
     console.log(data);
     this.services.create(this.appUrl.geturlfunction('POST_JOB'), data).subscribe(res => {
