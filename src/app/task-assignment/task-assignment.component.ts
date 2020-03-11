@@ -74,6 +74,7 @@ export class TaskAssignmentComponent implements OnInit {
       data: {
         mode: 'ADD',
         data: this.masterData,
+        acc: this.acc
       }
     });
 

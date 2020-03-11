@@ -65,11 +65,9 @@
             <!-- New section start -->
             <mat-form-field class="w-100" appearance="outline">
                 <mat-label>Account</mat-label>
-                <mat-select name="account" required [(ngModel)]="masterDetails.account" #account="ngModel">
-                    <mat-option [value]="1" class="mat-normal-option">Digital</mat-option>
-                    <mat-option [value]="2" class="mat-normal-option">Products</mat-option>
-                    <mat-option [value]="3" class="mat-normal-option">Services</mat-option>
-                    <mat-option [value]="4" class="mat-normal-option">Support</mat-option>
+                <mat-select name="acc" [(ngModel)]="masterDetails.accountId" #acc="ngModel">
+                    <mat-option *ngFor="let a of accList" [value]="a.uId" class="mat-normal-option">{{a.name}}
+                    </mat-option>
                 </mat-select>
             </mat-form-field>
             <mat-form-field class="w-100" appearance="outline">

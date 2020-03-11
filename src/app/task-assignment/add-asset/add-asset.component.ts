@@ -11,6 +11,7 @@ import * as momentzone from 'moment-timezone';
   encapsulation: ViewEncapsulation.None
 })
 export class AddAssetComponent implements OnInit {
+  accList: any=[];
   masterDetails: any = {};
   data: any;
   account: any[];
@@ -21,6 +22,7 @@ export class AddAssetComponent implements OnInit {
 
   constructor(private dialogRef: MatDialogRef<AddAssetComponent>, @Inject(MAT_DIALOG_DATA) public details: any, private appUrl: AppUrlServiceService, private services: AppServiceService) {
     console.log(this.details);
+    this.accList = this.details.acc;
     this.jobs = this.details.jobs;
     console.log(this.jobs);
   }

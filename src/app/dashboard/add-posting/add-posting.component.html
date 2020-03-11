@@ -5,7 +5,7 @@
             <div fxFlex="20">
                 <mat-form-field class="w-100" appearance="outline">
                     <mat-label>Account</mat-label>
-                    <mat-select name="acc" [(ngModel)]="req.account_id" #acc="ngModel">
+                    <mat-select name="acc" [(ngModel)]="req.accountId" #acc="ngModel">
                         <mat-option *ngFor="let a of accList" [value]="a.uId" class="mat-normal-option">{{a.name}}
                         </mat-option>
                     </mat-select>
@@ -17,7 +17,7 @@
             <div fxFlex="20">
                 <mat-form-field class="w-100" appearance="outline">
                     <mat-label>Designation</mat-label>
-                    <mat-select name="des" [(ngModel)]="req.designation" #acc="ngModel">
+                    <mat-select name="des" [(ngModel)]="req.designationId" #acc="ngModel">
                         <mat-option *ngFor="let d of desList" [value]="d.dId" class="mat-normal-option">
                             {{d.designation}}
                         </mat-option>
